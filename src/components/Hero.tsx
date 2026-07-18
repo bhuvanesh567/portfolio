@@ -145,7 +145,8 @@ export default function Hero() {
 
       // Animate navigation slide down
       gsap.fromTo(
-        "header",
+        "header",      <div className="w-full relative z-10 select-none px-8 lg:pl-32 flex items-center justify-start">
+
         { y: -50, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" }
       );
@@ -220,9 +221,11 @@ export default function Hero() {
         <div className="aurora-orb absolute bottom-[20%] right-[-10%] w-[40rem] h-[40rem] rounded-full bg-gradient-to-bl from-accent-secondary/15 via-highlight/5 to-transparent blur-[140px] pointer-events-none" />
       </div>
 
+
       {/* Grid Alignment with left padding constraints */}
-      <div className="w-full relative z-10 select-none px-8 lg:pl-32 flex items-center justify-start">
-        <div className="w-full max-w-[600px] flex flex-col items-start text-left">
+      <div className="w-full relative z-10 select-none flex items-center justify-start px-4 sm:px-6 lg:px-12 xl:px-20">
+  <div className="w-full max-w-[480px] flex flex-col items-start text-left">
+
           
           {/* Availability Badge */}
           <div className="availability-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel bg-card-bg text-highlight text-xs font-mono font-semibold tracking-wider mb-8 border-border-color shadow-[0_0_15px_rgba(0,229,255,0.15)]">
@@ -233,7 +236,7 @@ export default function Hero() {
           {/* Word-by-Word Reveal Heading */}
           <h1
             ref={titleRef}
-            className="text-4xl sm:text-6xl font-sans font-extrabold tracking-tight leading-[1.05] mb-8 text-white w-full"
+            className="text-4xl sm:text-5xl lg:text-6xl font-sans font-extrabold tracking-tight leading-[1.05] mb-8 text-white max-w-[520px]"
           >
             {headlineText.split(" ").map((word, i) => (
               <span key={i} className="inline-block overflow-hidden mr-3">
