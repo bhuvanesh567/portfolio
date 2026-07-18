@@ -4,11 +4,15 @@ import React from "react";
 import { ArrowUp, Mail, Phone, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 
-const Github = (props: React.SVGProps<SVGSVGElement>) => (
+type IconProps = React.SVGProps<SVGSVGElement> & {
+  size?: number;
+};
+
+const Github = ({ size = 15, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="15"
-    height="15"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -22,11 +26,11 @@ const Github = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
+const Linkedin = ({ size = 15, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="15"
-    height="15"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -113,7 +117,7 @@ export default function Footer() {
                 className="p-2.5 rounded-xl border border-white/5 bg-card-bg text-text-secondary hover:text-white hover:border-white/10 transition-all cursor-none"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={15} />
+                <Linkedin width={15} height={15} />
               </a>
               <a
                 href="https://github.com"
