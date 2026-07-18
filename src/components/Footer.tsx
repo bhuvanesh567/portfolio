@@ -125,7 +125,7 @@ export default function Footer() {
                 className="p-2.5 rounded-xl border border-white/5 bg-card-bg text-text-secondary hover:text-white hover:border-white/10 transition-all cursor-none"
                 aria-label="GitHub"
               >
-                <Github size={15} />
+                <Github width={15} height={15} />
               </a>
               <a
                 href="mailto:kamathambhuvanesh@gmail.com"
