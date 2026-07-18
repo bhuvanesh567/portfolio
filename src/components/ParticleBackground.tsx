@@ -12,6 +12,8 @@ export default function ParticleBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+const getCanvasWidth = () => canvas.width;
+const getCanvasHeight = () => canvas.height;  
     let animationFrameId: number;
     let particles: Particle[] = [];
     let mouse = { x: 0, y: 0, radius: 120 };
@@ -31,8 +33,8 @@ export default function ParticleBackground() {
       baseSize: number;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * getCanvasWidth();
+        this.y = Math.random() * getCanvasHeight();
         this.vx = (Math.random() - 0.5) * 0.4;
         this.vy = (Math.random() - 0.5) * 0.4;
         this.baseSize = Math.random() * 2 + 1;
@@ -44,8 +46,8 @@ export default function ParticleBackground() {
         this.y += this.vy;
 
         // Bounce on boundaries
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        if (this.x < 0 || this.x > getCanvasWidth()) this.vx *= -1;
+        if (this.y < 0 || this.y > getCanvasHeight()) this.vy *= -1;
 
         // Mouse interaction (push away)
         const dx = mouse.x - this.x;
